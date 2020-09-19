@@ -1,0 +1,35 @@
+
+.song{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 15px;
+}
+.song p{
+    font-weight: 700;
+}
+.grade{
+    padding-bottom: 10px;
+    border-bottom: 2px solid black;
+}
+
+.nav{
+    padding-left: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    border: 2px solid cadetblue;
+}
+.nav a{
+    padding: 10px;
+    display:block;
+    text-decoration: none;
+    color: crimson;
+    font-weight: 700;
+    font-size: 16px;
+}
+.nav a:hover{
+    background-color: aquamarine;
+}
+.second{
+    margin-left: 80px;
+}
