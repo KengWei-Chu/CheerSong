@@ -2,6 +2,7 @@
 .song{
     display: flex;
     justify-content: space-around;
+    align-items: center;
     margin-bottom: 15px;
 }
 .song p{
