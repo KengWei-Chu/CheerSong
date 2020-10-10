@@ -40,3 +40,20 @@ body{
 .small{
     font-size: 12px;
 }
+.other{
+    padding: 10px;
+    display:block;
+    text-decoration: none;
+    color: darkcyan;
+    font-weight: 700;
+    font-size: 24px;
+}
+.wrap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.wrap a{
+    font-size: 28px;
+}
