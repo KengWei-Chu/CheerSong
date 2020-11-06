@@ -1,5 +1,14 @@
 body{
     background-image: url(bc.jpg);
+    max-width: 992px;
+    margin: 0 auto;
+}
+h1{
+    text-align: center;
+}
+section{
+    max-width: 768px;
+    margin: 0 auto;
 }
 .song{
     display: flex;
@@ -16,14 +25,19 @@ body{
 }
 
 .nav{
+    position: fixed;
+    z-index: 99;
+    top: 45px;
+    right: 0;
+    background-color:#e6e6e6;
     padding-left: 0;
     list-style: none;
     display: flex;
     justify-content: space-evenly;
-    border: 2px solid cadetblue;
+    border: 2px solid #a6a6a6;
 }
 .nav a{
-    padding: 10px;
+    padding: 12px;
     display:block;
     text-decoration: none;
     color: crimson;
@@ -31,11 +45,11 @@ body{
     font-size: 16px;
 }
 .nav a:hover{
-    background-color: aquamarine;
+    background-color:#4db8ff;
 }
 .second{
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
 }
 .small{
     font-size: 12px;
