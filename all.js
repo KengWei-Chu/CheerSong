@@ -40,7 +40,17 @@ order.addEventListener("click", () => {
   if (selectedCount < 10) {
     alert(`Please select at least 10 names. Currently selected: ${selectedCount}`);
   } else {
+    /*
     output.innerHTML = `<p>Order</p><ul><li>${selectedNames.join("</li><li>")}</li></ul>`;
+    var html = '<p>Order</p><ul>';
+    */
+  
+    var html = '<ul class="orderUl">';
+    for (var i = 0; i < selectedNames.length; i++) {
+       html += '<li class="orderList song"><p>' + selectedNames[i] + '</p><audio class="" src="audiofile.mp3" controls controlsList="nodownload" preload="auto" id="music" loop></audio> </li>';
+    }
+    html += '</ul>';
+    output.innerHTML = html;
   }
 });
 

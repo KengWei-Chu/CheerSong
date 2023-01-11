@@ -133,3 +133,12 @@ li.selected{
 .buttonOrder:hover{
     background-color: gray;
 }
+
+
+.orderUl{
+    padding: 0;
+}
+.orderList{
+    list-style: none;
+    font-weight: 700;
+}
