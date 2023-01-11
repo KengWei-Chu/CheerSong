@@ -82,3 +82,54 @@ section{
 .wrap a{
     font-size: 28px;
 }
+
+.list{
+    width: 100%;
+    padding: 0;
+}
+.list li{
+    cursor: pointer;
+    list-style: none;
+    width: 33%;
+    text-align:center;
+    padding: 5px 0;
+}
+.list li:hover{
+    background-color: darkcyan;
+    color: #a6a6a6;
+}
+
+li.selected{
+    color: darkcyan;
+    font-weight: bold;
+}
+
+.flex{
+    display: flex;
+    
+}
+.block{
+    display: block;
+}
+.flexwrap{
+    flex-wrap: wrap;
+}
+
+.jcsb{
+    justify-content: space-between;
+}
+.jcar{
+    justify-content: space-around;
+}
+.jcc{
+    justify-content: center;
+}
+.buttonOrder,.buttonReset,.buttonPlayer{
+    display: block;
+    min-width:25%;
+    padding: 5px;
+    text-align: center;
+}
+.buttonOrder:hover{
+    background-color: gray;
+}
