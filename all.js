@@ -47,7 +47,8 @@ order.addEventListener("click", () => {
   
     var html = '<ul class="orderUl">';
     for (var i = 0; i < selectedNames.length; i++) {
-       html += '<li class="orderList song"><p>' + selectedNames[i] + '</p><audio class="" src="audiofile.mp3" controls controlsList="nodownload" preload="auto" id="music" loop></audio> </li>';
+      var name = selectedNames[i].replace(/\s/g,'');
+      html += '<li class="orderList song"><p>' + selectedNames[i] + '</p><audio class="" src="music/'+ name +'.mp3" controls controlsList="nodownload" preload="auto" id="music" loop></audio> </li>';
     }
     html += '</ul>';
     output.innerHTML = html;
