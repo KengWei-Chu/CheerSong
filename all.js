@@ -29,7 +29,7 @@ nameList.addEventListener("click", (event) => {
         selectedNames.push(name);
         numberList.push(currentNumber);
         numberElement.textContent = convertToChineseNum(currentNumber);
-    currentNumber++;
+        currentNumber++;
       }
       nameElement.classList.toggle("selected");
     }
@@ -48,7 +48,15 @@ order.addEventListener("click", () => {
     var html = '<ul class="orderUl">';
     for (var i = 0; i < selectedNames.length; i++) {
       var name = selectedNames[i].replace(/\s/g,'');
-      html += '<li class="orderList song"><p>' + selectedNames[i] + '</p><audio class="" src="music/'+ name +'.mp3" controls controlsList="nodownload" preload="auto" id="music" loop></audio> </li>';
+      if(name === "朱耕緯3"|| name ==="魏靖諺34"){
+        html += '<li class="orderList "><div class="flex song"><p>' + selectedNames[i] + '</p><audio class="" src="music/'+ name +'.mp3" controls controlsList="nodownload" preload="auto" id="music" loop></audio></div><div class="song second"><p class="small">第二打席</p><audio src="music/'+ name +'_2.mp3" controls controlsList="nodownload" preload="auto" id="music" loop></audio></div> </li>';
+      }else if(name === "施士翊99"){
+        html += '<li class="orderList "><div class="flex song"><p>' + selectedNames[i] + '</p><audio class="" src="music/'+ name +'.mp3" controls controlsList="nodownload" preload="auto" id="music" loop></audio></div><div class="song second"><p class="small">第二打席</p><audio src="music/'+ name +'_2.mp3" controls controlsList="nodownload" preload="auto" id="music" loop></audio></div><div class="song second"><p class="small">第三打席</p><audio src="music/'+ name +'_3.mp3" controls controlsList="nodownload" preload="auto" id="music" loop></audio></div><div class="song second"><p class="small">第四打席</p><audio src="music/'+ name +'_4.mp3" controls controlsList="nodownload" preload="auto" id="music" loop></audio></div> </li>';
+      }
+      else{
+        html += '<li class="orderList song"><p>' + selectedNames[i] + '</p><audio class="" src="music/'+ name +'.mp3" controls controlsList="nodownload" preload="auto" id="music" loop></audio> </li>';
+      }
+      
     }
     html += '</ul>';
     output.innerHTML = html;
