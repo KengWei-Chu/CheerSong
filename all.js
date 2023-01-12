@@ -3,11 +3,14 @@ const order = document.getElementById("order");
 const output = document.getElementById("output");
 const resetButton = document.getElementById("resetButton");
 const fieldList = document.getElementById("fieldList");
+// const orderTable = document.getElementById("order-table");
+const orderTable = document.getElementById("order-table").getElementsByTagName("tbody")[0];
 
 let selectedNames = [];
 let numberList = [];
 let selectedFields = [];
 let currentNumber = 1;
+let currentRow;
 
 function convertToChineseNum(num) {
     const chineseNumList = ['一棒 ', '二棒 ', '三棒 ', '四棒 ', '五棒 ', '六棒 ', '七棒 ', '八棒 ', '九棒 ', '十棒 ', '十一棒 '];
@@ -34,6 +37,16 @@ nameList.addEventListener("click", (event) => {
         currentNumber++;
       }
       nameElement.classList.toggle("selected");
+      
+      const row = document.createElement("tr");
+      const numCol = document.createElement("td");
+      const nameCol = document.createElement("td");
+      numCol.textContent = convertToChineseNum(numberList[numberList.length - 1]);
+      nameCol.textContent = name;
+      row.appendChild(numCol);
+      row.appendChild(nameCol);
+      orderTable.appendChild(row);
+      currentRow = row; 
     }
 });
 
@@ -51,6 +64,13 @@ fieldList.addEventListener("click", (event) =>{
       selectedFields.push(field);
     }
     fieldElement.classList.toggle("selected");
+
+    if (currentRow) {
+      // 使用 currentRow 更新內容
+      const fieldCol = document.createElement("td");
+      fieldCol.textContent = field;
+      currentRow.appendChild(fieldCol);
+    }
   }
 });
 
@@ -91,6 +111,11 @@ order.addEventListener("click", () => {
         ul.style.display = "flex";
         field.style.display = "flex";
     }
+    if(table.style.display === "table"){
+      table.style.display = "none";
+    } else{
+      table.style.display = "table"
+    }
     output.innerHTML = html;
   }
 });
@@ -109,6 +134,9 @@ resetButton.addEventListener("click", () => {
     numberList = [];
     selectedFields = [];
     currentNumber = 1;
+    const tbody = document.getElementsByTagName("tbody")[0];
+    const rows = tbody.getElementsByTagName("tr");
+    tbody.innerHTML = "";
     output.innerHTML = "";
   });
 
@@ -116,6 +144,8 @@ resetButton.addEventListener("click", () => {
 var listButton = document.getElementById("buttonId");
 var ul = document.getElementById("nameList");
 var field =document.getElementById("fieldList");
+var table =document.getElementById("order-table");
+
 
 listButton.addEventListener("click", function(){
     if(ul.style.display === "none") {
@@ -124,6 +154,11 @@ listButton.addEventListener("click", function(){
     } else {
         ul.style.display = "none";
         field.style.display = "none";
+    }
+    if(table.style.display === "none"){
+      table.style.display = "table";
+    } else{
+      table.style.display = "none"
     }
 });
 

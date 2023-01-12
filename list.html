@@ -11,7 +11,7 @@
         <h1>成大数学応援歌</h1>
     </header>
     <div class="flex jcar ">
-        <button id="order" class="buttonOrder">Order 生成</button>
+        <button id="order" class="buttonOrder">応援歌單生成</button>
         <button class="buttonPlayer" id="buttonId">球員名單</button> 
         <button id="resetButton" class="buttonReset">Reset</button>
     </div>
@@ -57,6 +57,21 @@
         <li>自由</li>
         <li>EP</li>        
     </ul>
+    <div class="flex jcc ">
+        <table id="order-table" style="display: none;" class="ordertable">
+            <thead>
+              <tr>
+                <th class="ordertableth">棒次</th>
+                <th class="ordertableth">姓名</th>
+                <th class="ordertableth">守位</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    
+      
     <div class="chanceSongList" id="listChanceSong" style="display: none;">
         <div class="song ">
             <p class="small">TeamTaiwan</p>

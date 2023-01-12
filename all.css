@@ -156,3 +156,28 @@ li.selected{
     border-style:double;
     border: width 2px;
 }
+
+.ordertable{
+  border-top: 2px solid;
+  border-collapse: collapse;
+  border-radius: 8px;
+  width: 90%;
+  text-align: center;
+}
+.ordertableth{
+    background-color: darkcyan ;
+}
+
+.ordertableth{
+    padding: 5px 0;
+    font-weight: 900;
+    font-size: 24px;
+    color: #9cb96c;
+}
+
+.ordertable td{
+    padding: 5px 0;
+}
+.ordertable tr:nth-child(odd){
+    background-color: rgba(160, 154, 154, 0.288);
+}
