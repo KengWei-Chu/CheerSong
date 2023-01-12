@@ -149,3 +149,10 @@ li.selected{
     list-style: none;
     font-weight: 700;
 }
+.cyan{
+    color: darkcyan;
+    font-weight: 700;
+    border-color: darkcyan ;
+    border-style:double;
+    border: width 2px;
+}

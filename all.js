@@ -2,9 +2,11 @@ const nameList = document.getElementById("nameList");
 const order = document.getElementById("order");
 const output = document.getElementById("output");
 const resetButton = document.getElementById("resetButton");
+const fieldList = document.getElementById("fieldList");
 
 let selectedNames = [];
 let numberList = [];
+let selectedFields = [];
 let currentNumber = 1;
 
 function convertToChineseNum(num) {
@@ -35,6 +37,23 @@ nameList.addEventListener("click", (event) => {
     }
 });
 
+fieldList.addEventListener("click", (event) =>{
+  if (event.target.tagName === "LI") {
+    const fieldElement = event.target;
+    const field = fieldElement.textContent;
+
+    if (selectedFields.includes(field)) {
+      selectedNames = selectedNames.filter((n) => n !== field);
+      const number = numberList[selectedNames.indexOf(field)];
+      numberList = numberList.filter((n) => n !== number);
+
+    } else {
+      selectedFields.push(field);
+    }
+    fieldElement.classList.toggle("selected");
+  }
+});
+
 order.addEventListener("click", () => {
   const selectedCount = selectedNames.length;
   if (selectedCount < 10) {
@@ -49,34 +68,46 @@ order.addEventListener("click", () => {
     for (var i = 0; i < selectedNames.length; i++) {
       var name = selectedNames[i].replace(/\s/g,'');
       if(name ==="魏靖諺34"|| name ==="林威志25" || name ==="黃耀寬88"){
-        html += '<li class="orderList "><div class="flex song"><p>' + selectedNames[i] + '</p><audio class="" src="music/'+ name +'.mp3" controls controlsList="nodownload" preload="auto" id="music" loop></audio></div><div class="song second"><p class="small">第二打席</p><audio src="music/'+ name +'_2.mp3" controls controlsList="nodownload" preload="auto" id="music" loop></audio></div> </li>';
+        html += '<li class="orderList "><div class="flex song"><p>' + selectedNames[i] + '   <span class = "cyan"> '+ selectedFields[i] + '</p><audio class="" src="music/'+ name +'.mp3" controls controlsList="nodownload" preload="auto" id="music" loop></audio></div><div class="song second"><p class="small">第二打席</p><audio src="music/'+ name +'_2.mp3" controls controlsList="nodownload" preload="auto" id="music" loop></audio></div> </li>';
       }else if(name === "朱耕緯3"){
-        html += '<li class="orderList "><div class="flex song"><p>' + selectedNames[i] + '</p><audio class="" src="music/'+ name +'.mp3" controls controlsList="nodownload" preload="auto" id="music" loop></audio></div><div class="song second"><p class="small">第二打席</p><audio src="music/'+ name +'_2.mp3" controls controlsList="nodownload" preload="auto" id="music" loop></audio></div><div class="song second"><p class="small">第三打席</p><audio src="music/'+ name +'_3.mp3" controls controlsList="nodownload" preload="auto" id="music" loop></audio></div> </li>';
+        html += '<li class="orderList "><div class="flex song"><p>' + selectedNames[i] + '   <span class = "cyan"> '+selectedFields[i] +'</p><audio class="" src="music/'+ name +'.mp3" controls controlsList="nodownload" preload="auto" id="music" loop></audio></div><div class="song second"><p class="small">第二打席</p><audio src="music/'+ name +'_2.mp3" controls controlsList="nodownload" preload="auto" id="music" loop></audio></div><div class="song second"><p class="small">第三打席</p><audio src="music/'+ name +'_3.mp3" controls controlsList="nodownload" preload="auto" id="music" loop></audio></div> </li>';
       }
       else if(name === "施士翊99"){
-        html += '<li class="orderList "><div class="flex song"><p>' + selectedNames[i] + '</p><audio class="" src="music/'+ name +'.mp3" controls controlsList="nodownload" preload="auto" id="music" loop></audio></div><div class="song second"><p class="small">第二打席</p><audio src="music/'+ name +'_2.mp3" controls controlsList="nodownload" preload="auto" id="music" loop></audio></div><div class="song second"><p class="small">第三打席</p><audio src="music/'+ name +'_3.mp3" controls controlsList="nodownload" preload="auto" id="music" loop></audio></div><div class="song second"><p class="small">第四打席</p><audio src="music/'+ name +'_4.mp3" controls controlsList="nodownload" preload="auto" id="music" loop></audio></div> </li>';
+        html += '<li class="orderList "><div class="flex song"><p>' + selectedNames[i] +  '   <span class = "cyan"> '+ selectedFields[i] +'</p><audio class="" src="music/'+ name +'.mp3" controls controlsList="nodownload" preload="auto" id="music" loop></audio></div><div class="song second"><p class="small">第二打席</p><audio src="music/'+ name +'_2.mp3" controls controlsList="nodownload" preload="auto" id="music" loop></audio></div><div class="song second"><p class="small">第三打席</p><audio src="music/'+ name +'_3.mp3" controls controlsList="nodownload" preload="auto" id="music" loop></audio></div><div class="song second"><p class="small">第四打席</p><audio src="music/'+ name +'_4.mp3" controls controlsList="nodownload" preload="auto" id="music" loop></audio></div> </li>';
       }
       else if(name === "莊維德15"|| name === "何晏吉27" || name === "曾裕祐28" || name === "陳宗翰46" || name === "李承諭56" || name === "謝秉廷89" || name === "黃聖堯97") {
-        html += '<li class="orderList song"><p>' + selectedNames[i] + '</p><audio class="" src="music/musicgang.mp3" controls controlsList="nodownload" preload="auto" id="music" loop></audio> </li>';
+        html += '<li class="orderList song"><p>' + selectedNames[i] + '   <span class = "cyan"> '+ selectedFields[i] + '</span></p><audio class="" src="music/musicgang.mp3" controls controlsList="nodownload" preload="auto" id="music" loop></audio> </li>';
       }
       else{
-        html += '<li class="orderList song"><p>' + selectedNames[i] + '</p><audio class="" src="music/'+ name +'.mp3" controls controlsList="nodownload" preload="auto" id="music" loop></audio> </li>';
+        html += '<li class="orderList song"><p>' + selectedNames[i] + '   <span class = "cyan"> '+ selectedFields[i] + '</p><audio class="" src="music/'+ name +'.mp3" controls controlsList="nodownload" preload="auto" id="music" loop></audio> </li>';
       }
       
     }
     html += '</ul>';
+    if(ul.style.display === "flex") {
+        ul.style.display = "none";
+        field.style.display = "none";
+    } else {
+        ul.style.display = "flex";
+        field.style.display = "flex";
+    }
     output.innerHTML = html;
   }
 });
 
 resetButton.addEventListener("click", () => {
     const selectedElements = nameList.querySelectorAll(".selected");
+    const selectedElements2 = fieldList.querySelectorAll(".selected");
     for (let element of selectedElements) {
       element.classList.remove("selected");
       element.querySelector(".number").textContent = "";
     }
+    for (let element of selectedElements2) {
+      element.classList.remove("selected");
+    }
     selectedNames = [];
     numberList = [];
+    selectedFields = [];
     currentNumber = 1;
     output.innerHTML = "";
   });
@@ -84,12 +115,15 @@ resetButton.addEventListener("click", () => {
 
 var listButton = document.getElementById("buttonId");
 var ul = document.getElementById("nameList");
+var field =document.getElementById("fieldList");
 
 listButton.addEventListener("click", function(){
     if(ul.style.display === "none") {
         ul.style.display = "flex";
+        field.style.display = "flex";
     } else {
         ul.style.display = "none";
+        field.style.display = "none";
     }
 });
 
