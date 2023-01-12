@@ -48,10 +48,16 @@ order.addEventListener("click", () => {
     var html = '<ul class="orderUl">';
     for (var i = 0; i < selectedNames.length; i++) {
       var name = selectedNames[i].replace(/\s/g,'');
-      if(name === "朱耕緯3"|| name ==="魏靖諺34"){
+      if(name ==="魏靖諺34"|| name ==="林威志25" || name ==="黃耀寬88"){
         html += '<li class="orderList "><div class="flex song"><p>' + selectedNames[i] + '</p><audio class="" src="music/'+ name +'.mp3" controls controlsList="nodownload" preload="auto" id="music" loop></audio></div><div class="song second"><p class="small">第二打席</p><audio src="music/'+ name +'_2.mp3" controls controlsList="nodownload" preload="auto" id="music" loop></audio></div> </li>';
-      }else if(name === "施士翊99"){
+      }else if(name === "朱耕緯3"){
+        html += '<li class="orderList "><div class="flex song"><p>' + selectedNames[i] + '</p><audio class="" src="music/'+ name +'.mp3" controls controlsList="nodownload" preload="auto" id="music" loop></audio></div><div class="song second"><p class="small">第二打席</p><audio src="music/'+ name +'_2.mp3" controls controlsList="nodownload" preload="auto" id="music" loop></audio></div><div class="song second"><p class="small">第三打席</p><audio src="music/'+ name +'_3.mp3" controls controlsList="nodownload" preload="auto" id="music" loop></audio></div> </li>';
+      }
+      else if(name === "施士翊99"){
         html += '<li class="orderList "><div class="flex song"><p>' + selectedNames[i] + '</p><audio class="" src="music/'+ name +'.mp3" controls controlsList="nodownload" preload="auto" id="music" loop></audio></div><div class="song second"><p class="small">第二打席</p><audio src="music/'+ name +'_2.mp3" controls controlsList="nodownload" preload="auto" id="music" loop></audio></div><div class="song second"><p class="small">第三打席</p><audio src="music/'+ name +'_3.mp3" controls controlsList="nodownload" preload="auto" id="music" loop></audio></div><div class="song second"><p class="small">第四打席</p><audio src="music/'+ name +'_4.mp3" controls controlsList="nodownload" preload="auto" id="music" loop></audio></div> </li>';
+      }
+      else if(name === "莊維德15"|| name === "何晏吉27" || name === "曾裕祐28" || name === "陳宗翰46" || name === "李承諭56" || name === "謝秉廷89" || name === "黃聖堯97") {
+        html += '<li class="orderList song"><p>' + selectedNames[i] + '</p><audio class="" src="music/musicgang.mp3" controls controlsList="nodownload" preload="auto" id="music" loop></audio> </li>';
       }
       else{
         html += '<li class="orderList song"><p>' + selectedNames[i] + '</p><audio class="" src="music/'+ name +'.mp3" controls controlsList="nodownload" preload="auto" id="music" loop></audio> </li>';
@@ -76,13 +82,35 @@ resetButton.addEventListener("click", () => {
   });
 
 
-var button = document.getElementById("buttonId");
+var listButton = document.getElementById("buttonId");
 var ul = document.getElementById("nameList");
 
-button.addEventListener("click", function(){
+listButton.addEventListener("click", function(){
     if(ul.style.display === "none") {
         ul.style.display = "flex";
     } else {
         ul.style.display = "none";
+    }
+});
+
+var chanceButton = document.getElementById("buttonChanceSong");
+var divChance = document.getElementById("listChanceSong");
+
+chanceButton.addEventListener("click", function(){
+    if(divChance.style.display === "none") {
+        divChance.style.display = "block";
+    } else {
+        divChance.style.display = "none";
+    }
+});
+
+var changeButton = document.getElementById("buttonChangeSong");
+var divChange= document.getElementById("listChangeSong");
+
+changeButton.addEventListener("click", function(){
+    if(divChange.style.display === "none") {
+      divChange.style.display = "block";
+    } else {
+      divChange.style.display = "none";
     }
 });

@@ -95,8 +95,8 @@ section{
     padding: 5px 0;
 }
 .list li:hover{
-    background-color: darkcyan;
-    color: #a6a6a6;
+   /* background-color: darkcyan;*/
+    color: #d24e51;
 }
 
 li.selected{
@@ -130,11 +130,18 @@ li.selected{
     padding: 5px;
     text-align: center;
 }
-.buttonOrder:hover{
-    background-color: gray;
+.buttonChance,.buttonChange{
+    margin: 10px 0;
+    display: block;
+    min-width:40%;
+    padding: 8px;
+    text-align: center;
 }
-
-
+/*
+.chanceSongList,.changeSongList{
+    display: none;
+}
+*/
 .orderUl{
     padding: 0;
 }

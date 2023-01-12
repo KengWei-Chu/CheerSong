@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="all.css">
-    <title>Document</title>
+    <title>成大数学·応援</title>
 </head>
 <body>
     <header>
@@ -15,7 +15,13 @@
         <button class="buttonPlayer" id="buttonId">球員名單</button> 
         <button id="resetButton" class="buttonReset">Reset</button>
     </div>
-    <ul class="flex jcsb flexwrap list" id="nameList">
+    <div class="flex jcar ">
+        <button class="buttonChance" id="buttonChanceSong">チャンス曲</button> 
+        <button class="buttonChange" id="buttonChangeSong">攻守调换</button>       
+    </div>
+   
+    
+    <ul class=" jcsb flexwrap list" id="nameList" style="display: none;">
         <li><span class="number"></span>王翔寬2</li>
         <li><span class="number"></span>黃振瑋16</li>
         <li><span class="number"></span>林威志25</li>
@@ -38,9 +44,41 @@
         <li><span class="number"></span>謝秉廷89</li>
         <li><span class="number"></span>黃聖堯97</li>
     </ul>
-    <div class="flex jcar ">
-        
-        
+    <div class="chanceSongList" id="listChanceSong" style="display: none;">
+        <div class="song ">
+            <p class="small">TeamTaiwan</p>
+            <audio src="music/music99-3.mp3" controls controlsList="nodownload" preload="auto" id="music" loop ></audio>
+        </div>
+        <div class="song">
+            <p class="small">チャンス侍</p>
+            <audio src="music/music99-2.mp3" controls controlsList="nodownload" preload="auto" id="music" loop ></audio>
+        </div>
+    </div>
+    <div class="changeSongList" id="listChangeSong" style="display: none;">
+        <div class="song">
+            <p>一切歌頌讚美</p>
+            <audio src="music/musicya.mp3" controls controlsList="nodownload" preload="auto" id="music" loop></audio>
+        </div>
+        <div class="song">
+            <p>起床歌</p>
+            <audio src="music/musicxd.mp3" controls controlsList="nodownload" preload="auto" id="music" loop></audio>
+        </div>
+        <div class="song">
+            <p>球団歌</p>
+            <audio src="music/musicjp.mp3" controls controlsList="nodownload" preload="auto" id="music" loop></audio>
+        </div>
+        <div class="song">
+            <p>猛獅出擊</p>
+            <audio src="music/music0001.mp3" controls controlsList="nodownload" id="music" loop></audio>
+        </div>
+        <div class="song">
+            <p>我們兄弟</p>
+            <audio src="music/music0002.mp3" controls controlsList="nodownload" id="music" loop></audio>
+        </div>
+        <div class="song">
+            <p>唐致遠登場曲</p>
+            <audio src="music/musicopen.mp3" controls controlsList="nodownload" id="music" loop></audio>
+        </div>
     </div>
     <div id="output"></div>
     <script src="all.js"></script>
